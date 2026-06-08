@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+
+  # Service 1: React App container
+  pokedex-app:
+    build: .                    # Dockerfile current folder mein hai
+    container_name: pokedex-app
+    # port 80 bahar expose mat karo — nginx hi handle karega
+
+  # Service 2: Nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    ports:
+      - "80:80"      # bahar se HTTP aata hai
+      - "443:443"    # bahar se HTTPS aata hai
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro        # config mount karo
+      - ./certs:/etc/nginx/certs:ro                  # certs mount karo
+    depends_on:
+      - pokedex-app  # app pehle start ho, phir nginx

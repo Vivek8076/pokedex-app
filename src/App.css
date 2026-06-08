@@ -1,0 +1,126 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1a1a2e;
+  color: #eee;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.app { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: #e94560;
+  margin-bottom: 20px;
+}
+
+.layout { display: flex; gap: 20px; }
+
+/* --- LEFT: Pokemon List --- */
+.pokemon-list {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.pokemon-btn {
+  background: #16213e;
+  color: #eee;
+  border: 1px solid #e94560;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: background 0.2s;
+}
+
+.pokemon-btn:hover { background: #e94560; color: #fff; }
+
+/* --- RIGHT: Detail Card --- */
+.detail-card {
+  flex: 1;
+  background: #16213e;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #0f3460;
+}
+
+.detail-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.poke-id { color: #888; font-size: 0.9rem; }
+
+.sprite { width: 120px; height: 120px; display: block; margin: 10px auto; }
+
+.section { margin-top: 14px; }
+.section strong { display: block; margin-bottom: 6px; color: #aaa; font-size: 0.85rem; text-transform: uppercase; }
+
+/* Type badges */
+.type {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-right: 6px;
+  font-size: 0.8rem;
+  background: #0f3460;
+  color: #eee;
+}
+.type-fire   { background: #e94560; }
+.type-water  { background: #2980b9; }
+.type-grass  { background: #27ae60; }
+.type-electric { background: #f39c12; color: #111; }
+.type-psychic  { background: #9b59b6; }
+.type-normal   { background: #555; }
+
+/* Ability badges */
+.ability {
+  display: inline-block;
+  background: #0f3460;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-right: 6px;
+  text-transform: capitalize;
+}
+
+/* Stat bars */
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.stat-name {
+  width: 130px;
+  font-size: 0.8rem;
+  color: #aaa;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+.stat-bar {
+  flex: 1;
+  background: #0f3460;
+  border-radius: 4px;
+  height: 8px;
+  overflow: hidden;
+}
+.stat-fill {
+  height: 100%;
+  background: #e94560;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+.stat-val { font-size: 0.8rem; width: 30px; text-align: right; }
+
+/* Loading / Error */
+.loading { color: #aaa; padding: 20px; text-align: center; }
+.error { color: #e94560; padding: 20px; text-align: center; }
