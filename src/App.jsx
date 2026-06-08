@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PokemonList from './components/PokemonList.jsx'
 import PokemonDetail from './components/PokemonDetail.jsx'
+import './App.css'
 
 function App() {
   const [selectedPokemon, setSelectedPokemon] = useState(null)
